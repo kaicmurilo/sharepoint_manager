@@ -14,9 +14,9 @@ if __name__ == "__main__":
     )
 
     sp = SharePoint(config)
-    file_path = "caminho/do/arquivo/local"
-    folder_path = "/caminho/da/pasta/no/sharepoint"
-    local_save_path = "caminho/para/salvar/o/arquivo/baixado"
+    file_path = os.environ.get("SP_FILE_PATH")
+    folder_path = os.environ.get("SP_FOLDER_PATH")
+    local_save_path = os.environ.get("SP_LOCAL_SAVE_PATH")
 
     try:
         sp.upload_file_to_sharepoint(file_path, folder_path)
